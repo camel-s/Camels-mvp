@@ -15,8 +15,6 @@ import { SideLoginComponent } from './side/side-login/side-login.component';
 import { SideUsuarioComponent } from './side/side-usuario/side-usuario.component';
 import { SideOfertaComponent } from './side/side-oferta/side-oferta.component';
 import { SideAvaliacaoComponent } from './side/side-avaliacao/side-avaliacao.component';
-import { ServicesComponent } from './services/services.component';
-import { ModelsComponent } from './models/models.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +31,7 @@ import { ModelsComponent } from './models/models.component';
     SideLoginComponent,
     SideUsuarioComponent,
     SideOfertaComponent,
-    SideAvaliacaoComponent,
-    ServicesComponent,
-    ModelsComponent
+    SideAvaliacaoComponent
   ],
   imports: [
     BrowserModule
