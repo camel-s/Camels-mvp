@@ -1,0 +1,7 @@
+.side{
+    z-index: 0;
+}
+
+.active{
+    z-index: 1;
+}

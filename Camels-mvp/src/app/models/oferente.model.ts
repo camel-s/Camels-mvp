@@ -1,8 +1,8 @@
 import { Usuario } from './usuario.model';
-import { Especializacao } from './especializacao.model';
 import { Servico } from './servico.model';
+import { Oferta } from './oferta.model';
 
 export class Oferente extends Usuario{
-    public especializacoes: Especializacao[]
+    public ofertas: Oferta[]
     public servicos: Servico[]
 }
