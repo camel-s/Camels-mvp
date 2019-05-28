@@ -8,8 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { SideComponent } from './side/side.component';
 import { MenuMainComponent } from './menu/menu-main/menu-main.component';
 import { MenuInicialComponent } from './menu/menu-inicial/menu-inicial.component';
-import { ContentContrateComponent } from './content/content-contrate/content-contrate.component';
-import { ContentOferecaComponent } from './content/content-ofereca/content-ofereca.component';
 import { SideLoginComponent } from './side/side-login/side-login.component';
 import { SideCadastroComponent } from './side/side-cadastro/side-cadastro.component';
 import { SideCadastroOfertaComponent } from './side/side-cadastro/side-cadastro-oferta/side-cadastro-oferta.component';
@@ -30,8 +28,6 @@ import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
     SideComponent,
     MenuMainComponent,
     MenuInicialComponent,
-    ContentContrateComponent,
-    ContentOferecaComponent,
     SideLoginComponent,
     SideCadastroComponent,
     SideCadastroOfertaComponent,
