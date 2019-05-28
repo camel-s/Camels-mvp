@@ -11,6 +11,15 @@ import { MenuInicialComponent } from './menu/menu-inicial/menu-inicial.component
 import { ContentContrateComponent } from './content/content-contrate/content-contrate.component';
 import { ContentOferecaComponent } from './content/content-ofereca/content-ofereca.component';
 import { SideLoginComponent } from './side/side-login/side-login.component';
+import { SideCadastroComponent } from './side/side-cadastro/side-cadastro.component';
+import { SideCadastroOfertaComponent } from './side/side-cadastro/side-cadastro-oferta/side-cadastro-oferta.component';
+import { SideCadastroUsuarioComponent } from './side/side-cadastro/side-cadastro-usuario/side-cadastro-usuario.component';
+import { SideCadastroServicoComponent } from './side/side-cadastro/side-cadastro-servico/side-cadastro-servico.component';
+import { SideListagemComponent } from './side/side-listagem/side-listagem.component';
+import { SideAvaliacaoComponent } from './side/side-avaliacao/side-avaliacao.component';
+import { ContentContratanteComponent } from './content/content-contratante/content-contratante.component';
+import { ContentOferenteComponent } from './content/content-oferente/content-oferente.component';
+import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +32,16 @@ import { SideLoginComponent } from './side/side-login/side-login.component';
     MenuInicialComponent,
     ContentContrateComponent,
     ContentOferecaComponent,
-    SideLoginComponent
+    SideLoginComponent,
+    SideCadastroComponent,
+    SideCadastroOfertaComponent,
+    SideCadastroUsuarioComponent,
+    SideCadastroServicoComponent,
+    SideListagemComponent,
+    SideAvaliacaoComponent,
+    ContentContratanteComponent,
+    ContentOferenteComponent,
+    MenuPerfilComponent
   ],
   imports: [
     BrowserModule
