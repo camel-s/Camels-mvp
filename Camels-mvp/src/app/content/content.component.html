@@ -1,3 +1,9 @@
-<p>
-  content works!
-</p>
+
+<div class="content">
+  <div *ngIf='usuario'>
+    <app-content-contratante></app-content-contratante>
+  </div>
+  <div *ngIf='!usuario'>
+    <app-content-inicial></app-content-inicial>
+  </div>
+</div>

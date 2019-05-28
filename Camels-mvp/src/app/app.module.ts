@@ -18,6 +18,7 @@ import { SideAvaliacaoComponent } from './side/side-avaliacao/side-avaliacao.com
 import { ContentContratanteComponent } from './content/content-contratante/content-contratante.component';
 import { ContentOferenteComponent } from './content/content-oferente/content-oferente.component';
 import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
+import { ContentInicialComponent } from './content/content-inicial/content-inicial.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
     SideAvaliacaoComponent,
     ContentContratanteComponent,
     ContentOferenteComponent,
-    MenuPerfilComponent
+    MenuPerfilComponent,
+    ContentInicialComponent
   ],
   imports: [
     BrowserModule

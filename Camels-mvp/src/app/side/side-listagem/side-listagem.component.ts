@@ -10,6 +10,7 @@ export class SideListagemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -10,6 +10,7 @@ export class SideCadastroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
