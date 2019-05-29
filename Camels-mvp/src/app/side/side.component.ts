@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideComponent implements OnInit {
 
-  constructor() { }
+  private display: number
+ 
+  constructor() { 
+     this.display = $(window).width();    
+  }
 
   ngOnInit() {
   }

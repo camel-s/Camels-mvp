@@ -12,6 +12,9 @@ a, a:hover{
 .vh100{
     height: 100vh;
 }
+.vh10{
+    height: 10vh;
+}
 
 /* Margin */
 .mt25{
@@ -23,5 +26,30 @@ a, a:hover{
     transition: color, 0.4s;
 }
 .l-1:hover{
-    color: black;
+    color: #051014;
+}
+
+/* Buttons */
+button{
+    border: none;
+}
+.bt-default{
+    position: relative;
+    border-radius: 2px;
+    width: 90px;
+    height: 50px;
+    transition: background-color, 0.4s; 
+}
+.bt-default:hover{
+    background-color: #58a5aa;
+}
+
+/* Inputs */
+input{
+    border: none;
+}
+.ipt-default{
+    border-bottom: 1px, solid;
+    height: 30px;
+    border-bottom-color: #051014;
 }
