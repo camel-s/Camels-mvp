@@ -1,16 +1,22 @@
-<p>
-  side-login works!
-</p>
-<div class='login col-12 align-items-center'>
-  <form class='col-12 d-flex justify-content-center position-relative'>
-    <div class="row">
-      <input type="text" class="col-12 ipt-default">
-    </div>
-    <div class="row">
-      <input type="text" class="col-12 ipt-default">
-    </div>
-    <div class="row">
-      <button class='bt-default bg-blue fs-b1 c-white f-es-m'>Entrar</button>
-    </div>
+<div class='login col-12'>
+  <form class='form col-9 mx-auto mt10'>
+      <div class="row">
+        <h1 class='mx-auto {{ fonts }} c-black'>Login</h1>
+      </div>
+      <div class='row mt10'>
+        <input type="email" name="email" class="col-12 ipt-default fs-m2 f-es-m form-group" placeholder="Email">
+      </div>
+      <div class='row mt-3'>
+        <input type="senha" name="senha" class="col-12 ipt-default fs-m2 f-es-m form-group" placeholder="Senha">
+      </div>
+      <div class='row mt-3'>
+        <a routerLink='/side/login' class="col-12 text-right c-black-o fs-s2 f-es-m p-0">Esqueci minha senha</a>
+      </div>
+      <div class="row mt10">
+        <button class="bt-default bg-blue fs-m2 f-es-m c-white mx-auto">Entrar</button>
+      </div>
   </form>
+  <div class="col-9 d-flex justify-content-center mx-auto mt10">
+    <a routerLink='/side/cadastro/usuario' class=" text-center c-black-o fs-m1 f-es-m">Não possuo cadastro</a>
+  </div>
 </div>

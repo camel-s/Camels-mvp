@@ -23,3 +23,6 @@
 .c-white{
     color: white;
 }
+.c-black-o{
+    color: rgba(0,0,0,0.55);
+}

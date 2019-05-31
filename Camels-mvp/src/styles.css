@@ -17,7 +17,13 @@ a, a:hover{
 }
 
 /* Margin */
-.mt25{
+.mt10{
+    margin-top: 10vh;
+}
+.mt15{
+    margin-top: 15vh;
+}
+.mt20{
     margin-top: 20vh;
 }
 
@@ -49,7 +55,9 @@ input{
     border: none;
 }
 .ipt-default{
-    border-bottom: 1px, solid;
     height: 30px;
-    border-bottom-color: #051014;
+    padding: 0px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.40);
 }

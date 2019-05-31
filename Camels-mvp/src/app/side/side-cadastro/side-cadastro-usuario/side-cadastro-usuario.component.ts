@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Fonts } from 'src/assets/fonts/fonts';
 
 @Component({
   selector: 'app-side-cadastro-usuario',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideCadastroUsuarioComponent implements OnInit {
 
-  constructor() { }
+  private fonts: string
+  
+  constructor() {
+    this.fonts = Fonts.titleSizeAdjust($(window).width())
+  }
 
   ngOnInit() {
   }
