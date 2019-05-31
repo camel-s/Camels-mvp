@@ -22,6 +22,8 @@ import { ContentContratanteComponent } from './content/content-contratante/conte
 import { ContentOferenteComponent } from './content/content-oferente/content-oferente.component';
 import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
 import { ContentInicialComponent } from './content/content-inicial/content-inicial.component';
+import { SideListagemOfertaComponent } from './side/side-listagem/side-listagem-oferta/side-listagem-oferta.component';
+import { SideListagemServicoComponent } from './side/side-listagem/side-listagem-servico/side-listagem-servico.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ContentInicialComponent } from './content/content-inicial/content-inici
     ContentContratanteComponent,
     ContentOferenteComponent,
     MenuPerfilComponent,
-    ContentInicialComponent
+    ContentInicialComponent,
+    SideListagemOfertaComponent,
+    SideListagemServicoComponent
   ],
   imports: [
     BrowserModule,

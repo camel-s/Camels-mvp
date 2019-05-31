@@ -13,6 +13,8 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuInicialComponent } from './menu/menu-inicial/menu-inicial.component';
 import { MenuMainComponent } from './menu/menu-main/menu-main.component';
 import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
+import { SideListagemOfertaComponent } from './side/side-listagem/side-listagem-oferta/side-listagem-oferta.component';
+import { SideListagemServicoComponent } from './side/side-listagem/side-listagem-servico/side-listagem-servico.component';
 
 export const ROUTES: Routes = [
     { path: 'side', component: SideComponent, 
@@ -23,7 +25,11 @@ export const ROUTES: Routes = [
                 { path: 'oferta', component: SideCadastroOfertaComponent},
                 { path: 'servico', component: SideCadastroServicoComponent}  
             ]},
-            { path: 'listagem', component: SideListagemComponent },
+            { path: 'listagem', component: SideListagemComponent,
+                children: [
+                    { path: 'oferta', component: SideListagemOfertaComponent },
+                    { path: 'servico', component: SideListagemServicoComponent }
+            ]},
             { path: 'login', component: SideLoginComponent }
         ]
     },

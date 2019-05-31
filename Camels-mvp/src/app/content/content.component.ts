@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  public usuario: boolean
+
+  constructor() {
+    this.usuario = true;
+   }
 
   ngOnInit() {
   }

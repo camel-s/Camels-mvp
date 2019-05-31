@@ -1,28 +1,34 @@
 /* Background color */
-.bg-black-o{
-    background-color: rgba(0,0,0,0.55);
-}
-.bg-white-o{
-    background-color: rgba(255,255,255,0.7);
-}
-.bg-blue{
-    background-color: #052a2d;
-}
-.bg-lightblue{
-    background-color: #58a5aa;
-}
-
-.bg-null{
+.bg-0{
     background-color: transparent;
 }
+.bg-1{
+    background-color: black;
+}
+.bg-2{
+    background-color: white;
+}
+.bg-3{
+    background-color: #052a2d;
+}
+.bg-4{
+    background-color: #58a5aa;
+}
+.bg-1o{
+    background-color: rgba(0,0,0,0.55);
+}
+.bg-2o{
+    background-color: rgba(255,255,255,0.7);
+}
+
 
 /* Color */
-.c-black{
+.c-1{
     color: black;
 }
-.c-white{
+.c-2{
     color: white;
 }
-.c-black-o{
+.c-1o{
     color: rgba(0,0,0,0.55);
 }

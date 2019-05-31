@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuMainComponent implements OnInit {
 
-  constructor() { }
+  private tipoUsuario: number
+
+  constructor() {
+    
+  }
 
   ngOnInit() {
+
   }
+
+  ngOnChanges() {
+
+  }
+  
 
 }

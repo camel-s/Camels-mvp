@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  private usuario: boolean = true
+  
+  constructor() { 
+    
+  }
 
   ngOnInit() {
   }
+
+  
 
 }
