@@ -1,7 +1,7 @@
 import { AreaAtuacao } from './areaAtuacao.model';
 
 export class Servico{
-    public id: string
+    public id: number
     public titulo: string
     public descricao: string
     public areaAtuacao: AreaAtuacao

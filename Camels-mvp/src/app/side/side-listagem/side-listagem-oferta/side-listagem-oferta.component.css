@@ -1,0 +1,9 @@
+.oferta-contratante{
+   border: none;  
+   border-radius: 50%;
+}
+
+.oferta-oferente{
+    border: none;
+    border-radius: 10px;
+}

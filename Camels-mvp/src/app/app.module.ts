@@ -24,6 +24,8 @@ import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
 import { ContentInicialComponent } from './content/content-inicial/content-inicial.component';
 import { SideListagemOfertaComponent } from './side/side-listagem/side-listagem-oferta/side-listagem-oferta.component';
 import { SideListagemServicoComponent } from './side/side-listagem/side-listagem-servico/side-listagem-servico.component';
+import { OfertaService } from './services/oferta.service';
+import { ServicoService } from './services/servico.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,10 @@ import { SideListagemServicoComponent } from './side/side-listagem/side-listagem
     BrowserModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ 
+    OfertaService, 
+    ServicoService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

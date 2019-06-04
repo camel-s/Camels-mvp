@@ -17,6 +17,9 @@ a, a:hover{
 }
 
 /* Margin */
+.mt7{
+    margin-top: 7.5vh;
+}
 .mt10{
     margin-top: 10vh;
 }
