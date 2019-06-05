@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
+import 'rxjs'
 @Component({
   selector: 'app-side',
   templateUrl: './side.component.html',
@@ -8,12 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class SideComponent implements OnInit {
 
   private display: number
- 
-  constructor() { 
-     this.display = $(window).width();    
+  private exitRoute: any 
+  
+  constructor(private route: ActivatedRoute) { 
+    this.exitRoute = this.route.snapshot
+    console.log(this.exitRoute.toString())
+    this.display = $(window).width();    
   }
 
   ngOnInit() {
+
   }
 
 }

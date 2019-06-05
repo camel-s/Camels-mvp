@@ -18,9 +18,12 @@ export class SideListagemOfertaComponent implements OnInit {
   ngOnInit() {
     this.ofertaService.getOfertas()
     .then(
-      ( ofertas: Oferta[] ) => { this.ofertas = ofertas },
+      ( ofertas: Oferta[] ) => { this.ofertas = ofertas; }
+    )
+    .catch(
       ( param: any ) => { console.log(param) } 
     )
+    console.log(this.ofertas)
   }
 
 }

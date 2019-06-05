@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ROUTES } from './app.routes';
 
@@ -26,6 +27,9 @@ import { SideListagemOfertaComponent } from './side/side-listagem/side-listagem-
 import { SideListagemServicoComponent } from './side/side-listagem/side-listagem-servico/side-listagem-servico.component';
 import { OfertaService } from './services/oferta.service';
 import { ServicoService } from './services/servico.service';
+import { SideOfertaComponent } from './side/side-oferta/side-oferta.component';
+import { SideServicoComponent } from './side/side-servico/side-servico.component';
+import { RoutesService } from './services/routes.service';
 
 @NgModule({
   declarations: [
@@ -48,15 +52,19 @@ import { ServicoService } from './services/servico.service';
     MenuPerfilComponent,
     ContentInicialComponent,
     SideListagemOfertaComponent,
-    SideListagemServicoComponent
+    SideListagemServicoComponent,
+    SideOfertaComponent,
+    SideServicoComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ 
     OfertaService, 
-    ServicoService 
+    ServicoService,
+    RoutesService 
   ],
   bootstrap: [AppComponent]
 })

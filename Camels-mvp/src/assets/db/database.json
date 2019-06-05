@@ -1,0 +1,134 @@
+{
+     "ofertas": [
+        {
+            "id": 1,
+            "titulo": "oferta top 1",
+            "descricao": "oferta top descricao 1",
+            "servicos": null,
+            "Contratante": 0,
+            "Oferente": {
+                "id": 1,
+                "nome": "Arthur",
+                "login":{
+                    "email": "arthur@gmail.com",
+                    "senha": "123"
+                }
+            }
+        },
+        {
+            "id": 2,
+            "titulo": "oferta top 2",
+            "descricao": "oferta top descricao 2",
+            "servicos": null,
+            "Contratante": 0,
+            "Oferente": {
+                "id": 1,
+                "nome": "Arthur",
+                "login":{
+                    "email": "arthur@gmail.com",
+                    "senha": "123"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "titulo": "oferta top 3",
+            "descricao": "oferta top descricao 3",
+            "servicos": null,
+            "Contratante": 0,
+            "Oferente": {
+                "id": 1,
+                "nome": "Arthur",
+                "login":{
+                    "email": "arthur@gmail.com",
+                    "senha": "123"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "titulo": "oferta top 4",
+            "descricao": "oferta top descricao 4",
+            "anexo": "",
+            "servicos": null,
+            "Contratante": 0,
+            "Oferente": {
+                "id": 1,
+                "nome": "Arthur",
+                "login":{
+                    "email": "arthur@gmail.com",
+                    "senha": "123"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "titulo": "oferta top 5",
+            "descricao": "oferta top descricao 5",
+            "anexo": "",
+            "servicos": null,
+            "Contratante": 0,
+            "Oferente": {
+                "id": 1,
+                "nome": "Arthur",
+                "login":{
+                    "email": "arthur@gmail.com",
+                    "senha": "123"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "titulo": "oferta top 6",
+            "descricao": "oferta top descricao 6",
+            "anexo": "",
+            "servicos": null,
+            "Contratante": 0,
+            "Oferente": {
+                "id": 1,
+                "nome": "Arthur",
+                "login": {
+                    "email": "arthur@gmail.com",
+                    "senha": "123"
+                }
+            }
+        }
+    ],
+    "servicos": [
+        {
+            "id": 1,
+            "titulo": "servico top 1",
+            "descricao": "servico top descricao 1",
+            "areaAtuacao": null,
+            "preco": 20
+        },
+        {
+            "id": 2,
+            "titulo": "servico top 2",
+            "descricao": "servico top descricao 2",
+            "areaAtuacao": null,
+            "preco": 20
+        },
+        {
+            "id": 3,
+            "titulo": "servico top 3",
+            "descricao": "servico top descricao 3",
+            "areaAtuacao": null,
+            "preco": 20
+        },
+        {
+            "id": 4,
+            "titulo": "servico top 4",
+            "descricao": "servico top descricao 4",
+            "areaAtuacao": null,
+            "preco": 20
+        },
+        {
+            "id": 5,
+            "titulo": "servico top 5",
+            "descricao": "servico top descricao 5",
+            "areaAtuacao": null,
+            "preco": 20
+        }
+    ]
+}
