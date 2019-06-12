@@ -9,12 +9,9 @@ import 'rxjs'
 })
 export class SideComponent implements OnInit {
 
-  private display: number
-  private exitRoute: any 
+  private display: number 
   
   constructor(private route: ActivatedRoute) { 
-    this.exitRoute = this.route.snapshot
-    console.log(this.exitRoute.toString())
     this.display = $(window).width();    
   }
 

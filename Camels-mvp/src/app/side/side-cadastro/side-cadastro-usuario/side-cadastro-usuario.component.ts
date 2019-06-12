@@ -17,4 +17,8 @@ export class SideCadastroUsuarioComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit(form) {
+    console.log(form.value)
+  }
+
 }

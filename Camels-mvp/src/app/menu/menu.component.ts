@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  private usuario: boolean = true
   
+  private usuario: boolean = true
+
   constructor() { 
     
   }
 
   ngOnInit() {
+    
   }
 
   

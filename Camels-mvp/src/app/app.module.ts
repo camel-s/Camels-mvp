@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
@@ -30,7 +31,6 @@ import { ServicoService } from './services/servico.service';
 import { SideOfertaComponent } from './side/side-oferta/side-oferta.component';
 import { SideServicoComponent } from './side/side-servico/side-servico.component';
 import { RoutesService } from './services/routes.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +58,7 @@ import { RoutesService } from './services/routes.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],

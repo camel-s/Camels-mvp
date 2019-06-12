@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuMainComponent implements OnInit {
 
-  private tipoUsuario: number
+  private tipoUsuario: string = 'contratante'  
+  private link: string = '/content/oferente'
 
   constructor() {
     
@@ -17,9 +18,14 @@ export class MenuMainComponent implements OnInit {
 
   }
 
-  ngOnChanges() {
-
-  }
-  
+  alternarTipo(){
+    if(this.tipoUsuario == 'contratante'){
+      this.tipoUsuario = 'oferente'
+      this.link = '/content/contratante'
+    }else{
+      this.tipoUsuario = 'contratante'
+      this.link = '/content/oferente'
+    }
+  }  
 
 }
