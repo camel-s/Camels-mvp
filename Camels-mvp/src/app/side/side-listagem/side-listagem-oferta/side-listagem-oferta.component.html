@@ -8,15 +8,15 @@
         <div class="col-9">
           <div class="row">
             <div class='col-6'>{{ oferta.titulo }}</div>
-            <div class="col-6">{{ oferta.servico.preco}}</div>
+            <div class="col-6">{{ oferta.servicos[0].preco | currency:"BRL" }}</div>
           </div>
           <div class="row">
-            <div class='col-6'>{{ oferta.idUsuario }}</div>
+            <div class='col-6'>{{ oferta.usuario }}</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="excluir col-2 vh10 bg-2 text-center ml-2 m-0 p-0">
+    <div  class="excluir col-2 vh10 bg-2 text-center ml-2 m-0 p-0" (click)='excluir(oferta.id)'>
       X
     </div>
   </div>  

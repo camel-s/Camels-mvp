@@ -57,12 +57,16 @@ button{
 }
 
 /* Inputs */
-input{
-    border: none;
-}
 .ipt-default{
     height: 30px;
+}
+.txta-default{
+    height: 60px;
+}
+.ipt-default, .txta-default{
+    border: none;
     padding: 0px;
+    border-radius: 0px;
     border-bottom: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgba(0, 0, 0, 0.40);

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertaService } from 'src/app/services/oferta.service';
 import { Oferta } from 'src/app/models/oferta.model';
+import { Servico } from 'src/app/models/servico.model';
+import { ServicoService } from 'src/app/services/servico.service';
 
 @Component({
   selector: 'app-side-listagem-oferta',
@@ -11,19 +13,38 @@ import { Oferta } from 'src/app/models/oferta.model';
 
 export class SideListagemOfertaComponent implements OnInit {
   
-  public ofertas: Oferta[]
+  public ofertas
 
-  constructor(private ofertaService: OfertaService) { }
+  constructor(private ofertaService: OfertaService, private servicoService: ServicoService) { }
 
   ngOnInit() {
     this.ofertaService.getOfertas()
     .then(
-      ( ofertas: Oferta[] ) => { this.ofertas = ofertas; }
+      ( ofertas ) => {  
+        this.ofertas = ofertas
+        this.ofertas.forEach((el, index) => {
+          this.servicoService.getServicos(el.servicos[0]).then(
+            (servico) => { 
+               let oferta = this.ofertas[index-1]
+               oferta.servicos = servico 
+            }
+            )
+          index++
+        })
+      }
     )
     .catch(
       ( param: any ) => { console.log(param) } 
     )
-    console.log(this.ofertas)
+  }
+
+  public excluir(id){
+    for (let index = 0; index < this.ofertas.length; index++) {
+      if(this.ofertas[index].id == id){
+        this.ofertas.splice(index, 1)
+      }
+    }
+    this.ofertaService.deleteOferta(id)
   }
 
 }

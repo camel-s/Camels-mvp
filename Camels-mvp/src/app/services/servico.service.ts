@@ -13,13 +13,24 @@ export class ServicoService {
 
   constructor(private http: HttpClient) {}
 
-  public servicos: Servico[]
+  public getServicos(id?: number): Promise<Servico[]> {
+    let search:string = '';
+    if(id){
+      search = '?id='+id;
+    }
+    return this.http.get(URL_API + '/servicos'+search)
+      .toPromise()
+      .then((resposta: Servico[]) => resposta)
+  }
 
-  public getServicos(): Promise<Servico[]> {
-    return this.http.get(URL_API + '/servicos')
+  public deleteServico(id) {
+    return this.http.delete(URL_API + '/servicos/' + id)
       .toPromise()
       .then((resposta: any) => resposta)
   }
 
+  public addServico(values) {
+    console.log(values)
+  }
 
 }

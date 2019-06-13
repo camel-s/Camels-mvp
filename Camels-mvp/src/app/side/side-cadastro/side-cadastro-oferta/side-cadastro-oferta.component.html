@@ -1,3 +1,25 @@
-<p>
-  side-cadastro-oferta works!
-</p>
+<form #usuarioCadastro='ngForm' (ngSubmit)='submit(usuarioCadastro)' class="form col-9 mx-auto mt10">
+  <div class="form-group">
+    <div class="row">
+      <h1 class='mx-auto {{ fonts }} f-es-m c-1'>Oferta</h1>
+    </div>
+    <div class='row mt-5'>
+      <input ngModel #titulo='ngModel' type="text" name="titulo" class="ipt-default col-12 fs-m2 f-es-m form-control"
+        placeholder="Título" [value]='titulo'>
+    </div>
+    <div class='row mt-2'>
+      <textarea ngModel #titulo='ngModel' name="descricao" cols="30" rows="10"
+        class="txta-default col-12 fs-m2 f-es-m form-control" placeholder="Descrição" [value]='descricao'></textarea>
+    </div>
+    <div class='row mt-2'>
+      <select ngModel #titulo='ngModel' name="servico" class="ipt-default col-12 fs-m2 f-es-m form-control">
+        <option default value="">Vincular Serviço</option>
+        <option *ngFor='let servico of servicos' [value]="servico.id">{{ servico.titulo }}</option>
+        <option value="addServico">Adicionar</option>
+      </select>
+    </div>
+    <div class="row mt-5">
+      <button class="bt-default bg-3 fs-m2 f-es-m c-2 mx-auto">concluir</button>
+    </div>
+  </div>
+</form>
