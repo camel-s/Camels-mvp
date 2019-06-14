@@ -31,6 +31,11 @@ import { ServicoService } from './services/servico.service';
 import { SideOfertaComponent } from './side/side-oferta/side-oferta.component';
 import { SideServicoComponent } from './side/side-servico/side-servico.component';
 import { RoutesService } from './services/routes.service';
+import { SideEditarComponent } from './side/side-editar/side-editar.component';
+import { SideEditarOfertaComponent } from './side/side-editar/side-editar-oferta/side-editar-oferta.component';
+import { SideEditarServicoComponent } from './side/side-editar/side-editar-servico/side-editar-servico.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +59,10 @@ import { RoutesService } from './services/routes.service';
     SideListagemOfertaComponent,
     SideListagemServicoComponent,
     SideOfertaComponent,
-    SideServicoComponent
+    SideServicoComponent,
+    SideEditarComponent,
+    SideEditarOfertaComponent,
+    SideEditarServicoComponent
   ],
   imports: [
     BrowserModule,

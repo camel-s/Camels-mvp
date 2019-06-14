@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Fonts } from 'src/assets/fonts/fonts';
+import { ServicoService } from 'src/app/services/servico.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-cadastro-servico',
@@ -8,13 +10,9 @@ import { Fonts } from 'src/assets/fonts/fonts';
 })
 export class SideCadastroServicoComponent implements OnInit {
 
-  private operacao: string
-  private titulo: string
-  private descricao: string
-  private preco: string
   private fonts: string
 
-  constructor() {
+  constructor(private servicoService: ServicoService, private router: Router) {
     this.fonts = Fonts.titleSizeAdjust($(window).width())
   }
 
@@ -22,9 +20,11 @@ export class SideCadastroServicoComponent implements OnInit {
   }
 
   submit(form) {
-    console.log(form.value)
-    setTimeout(() => {
-      window.location.assign('/side/listagem/servico')
-    }, 2000);
+    this.servicoService.addServico(form.value)
+    .then(
+      (resposta) => {
+        this.router.navigate(['/side/listagem/servico'])
+      }
+    )
   }
 }

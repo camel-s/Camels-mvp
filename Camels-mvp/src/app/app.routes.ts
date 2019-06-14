@@ -15,6 +15,9 @@ import { MenuMainComponent } from './menu/menu-main/menu-main.component';
 import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
 import { SideListagemOfertaComponent } from './side/side-listagem/side-listagem-oferta/side-listagem-oferta.component';
 import { SideListagemServicoComponent } from './side/side-listagem/side-listagem-servico/side-listagem-servico.component';
+import { SideEditarComponent } from './side/side-editar/side-editar.component';
+import { SideEditarOfertaComponent } from './side/side-editar/side-editar-oferta/side-editar-oferta.component';
+import { SideEditarServicoComponent } from './side/side-editar/side-editar-servico/side-editar-servico.component';
 
 export const ROUTES: Routes = [
     { path: 'side', component: SideComponent, 
@@ -30,6 +33,15 @@ export const ROUTES: Routes = [
                     { path: 'oferta', component: SideListagemOfertaComponent },
                     { path: 'servico', component: SideListagemServicoComponent }
             ]},
+            {
+                path: 'editar', component: SideEditarComponent,
+                children: [
+                    { path: 'oferta', component: SideEditarOfertaComponent },
+                    { path: 'oferta/:id', component: SideEditarOfertaComponent },
+                    { path: 'servico', component: SideEditarServicoComponent },
+                    { path: 'servico/:id', component: SideEditarServicoComponent }
+                ]
+            },
             { path: 'login', component: SideLoginComponent }
         ]
     },

@@ -1,5 +1,4 @@
 import { Login } from './login.model';
-import { Endereco } from './endereco.model';
 import { Avaliacao } from './avaliacao.model';
 
 export class Usuario{

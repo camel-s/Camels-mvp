@@ -3,6 +3,7 @@ import { ServicoService } from 'src/app/services/servico.service';
 import { Servico } from 'src/app/models/servico.model';
 import { OfertaService } from 'src/app/services/oferta.service';
 import { Fonts } from 'src/assets/fonts/fonts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-cadastro-oferta',
@@ -12,13 +13,9 @@ import { Fonts } from 'src/assets/fonts/fonts';
 export class SideCadastroOfertaComponent implements OnInit {
 
   public servicos: Servico[]
-  private operacao: string
-  private titulo: string
-  private descricao: string
-  private servico: string
   private fonts: string
   
-  constructor(private servicoService: ServicoService, private ofertaService: OfertaService) { 
+  constructor(private servicoService: ServicoService, private ofertaService: OfertaService, private router: Router) { 
     this.fonts = Fonts.titleSizeAdjust($(window).width())
   }
 
@@ -27,10 +24,18 @@ export class SideCadastroOfertaComponent implements OnInit {
       .then(
         (servicos) => { this.servicos = servicos}
       )
+      .catch(
+        (error) => console.error(error)
+      )
   }
 
   submit(form) {
     this.ofertaService.addOferta(form.value)
+      .then(
+        (resposta) => {
+          this.router.navigate(['/side/listagem/oferta'])
+        }
+      )
   }
 
 }

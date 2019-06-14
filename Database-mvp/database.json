@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Arthur",
+      "email": "arthur@gmail",
+      "senha": "123",
+      "cpf": 11011011011
+    }
+  ],
+  "ofertas": [],
+  "servicos": [
+    {
+      "id": 1,
+      "titulo": "Arquiteto",
+      "descricao": "Fazendo umas laje",
+      "tipo": "1",
+      "preco": 10,
+      "usuario": 1
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<form #servicoEditar='ngForm' (ngSubmit)='submit(servicoEditar)' class="form col-9 mx-auto mt10">
+  <div class="form-group">
+    <div class='row mt-5'>
+      <input ngModel #titulo='ngModel' type="text" name="titulo" class="ipt-default col-12 fs-m2 f-es-m form-control"
+        placeholder="Título" [value]='servico.titulo'>
+    </div>
+    <div class='row mt-2'>
+      <textarea ngModel #titulo='ngModel' name="descricao" cols="30" rows="10"
+        class="txta-default col-12 fs-m2 f-es-m form-control" placeholder="Descrição" [value]='servico.descricao'></textarea>
+    </div>
+    <div class='row mt-2'>
+      <select ngModel #titulo='ngModel' name="tipo" class="ipt-default col-12 fs-m2 f-es-m form-control">
+        <option [selected]='servico.tipo == 1' value="1">Por hora</option>
+        <option [selected]='servico.tipo == 2' value="2">Por trabalho</option>
+      </select>
+    </div>
+    <div class='row mt-2'>
+      <input ngModel #preco='ngModel' type="number" name="preco" class="ipt-default col-12 fs-m2 f-es-m form-control"
+        placeholder="Preço" [value]='servico.preco'>
+    </div>
+    <div class="row mt-5">
+      <button class="bt-default bg-3 fs-m2 f-es-m c-2 mx-auto">Concluir</button>
+    </div>
+  </div>
+</form>

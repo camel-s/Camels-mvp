@@ -16,6 +16,12 @@ a, a:hover{
     height: 10vh;
 }
 
+/* Width */
+
+.vw10{
+    width: 10vh;
+}
+
 /* Margin */
 .mt7{
     margin-top: 7.5vh;
@@ -70,4 +76,10 @@ button{
     border-bottom: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgba(0, 0, 0, 0.40);
+}
+
+/* Border radius */
+
+.br-50{
+    border-radius: 50%;
 }

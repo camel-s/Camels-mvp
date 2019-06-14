@@ -1,16 +1,22 @@
-<form #usuarioCadastro='ngForm' (ngSubmit)='submit(usuarioCadastro)' class="form col-9 mx-auto mt10">
+<form #servicoCadastro='ngForm' (ngSubmit)='submit(servicoCadastro)' class="form col-9 mx-auto mt10">
     <div class="form-group">
       <div class="row">
-        <h1 class='mx-auto {{ font }} f-es-m c-1'>Serviço</h1>
+        <h1 class='mx-auto {{ fonts }} f-es-m c-1'>Serviço</h1>
       </div>
       <div class='row mt-5'>
-        <input ngModel #titulo='ngModel' type="text" name="titulo" class="ipt-default col-12 fs-m2 f-es-m form-control" placeholder="Título" [value]='titulo'>
+        <input ngModel #titulo='ngModel' type="text" name="titulo" class="ipt-default col-12 fs-m2 f-es-m form-control" placeholder="Título">
       </div>
       <div class='row mt-2'>
-        <textarea ngModel #titulo='ngModel' name="descricao" cols="30" rows="10" class="txta-default col-12 fs-m2 f-es-m form-control" placeholder="Descrição" [value]='descricao'></textarea>
+        <textarea ngModel #titulo='ngModel' name="descricao" cols="30" rows="10" class="txta-default col-12 fs-m2 f-es-m form-control" placeholder="Descrição"></textarea>
       </div>
       <div class='row mt-2'>
-        <input ngModel #preco='ngModel' type="number" name="preco" class="ipt-default col-12 fs-m2 f-es-m form-control" placeholder="Preço" [value]='preco'>
+        <select ngModel #titulo='ngModel' name="tipo" class="ipt-default col-12 fs-m2 f-es-m form-control">
+          <option value="1" selected>Por hora</option>
+          <option value="2">Por trabalho</option>
+        </select>
+      </div>
+      <div class='row mt-2'>
+        <input ngModel #preco='ngModel' type="number" name="preco" class="ipt-default col-12 fs-m2 f-es-m form-control" placeholder="Preço">
       </div>
       <div class="row mt-5">
         <button class="bt-default bg-3 fs-m2 f-es-m c-2 mx-auto">Adicionar</button>
