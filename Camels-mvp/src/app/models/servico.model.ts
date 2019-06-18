@@ -7,5 +7,6 @@ export class Servico{
     public descricao: string
     public tipo: number
     public preco: number
+    public data: Date
     public usuario: Usuario
 }

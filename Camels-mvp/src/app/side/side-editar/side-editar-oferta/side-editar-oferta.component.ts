@@ -22,6 +22,7 @@ export class SideEditarOfertaComponent implements OnInit {
       titulo: '',
       descricao: '',
       servicos: null,
+      data: null,
       usuario: null
     }
   }

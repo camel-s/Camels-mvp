@@ -47,6 +47,7 @@ export class ServicoService {
       descricao: values.descricao,
       tipo: values.tipo,
       preco: values.preco,
+      data: Date.now(),
       usuario: 1
     }
     

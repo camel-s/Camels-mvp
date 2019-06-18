@@ -35,12 +35,8 @@ export class SideListagemOfertaComponent implements OnInit {
           }
     )
     .catch(
-      ( param: any ) => { console.log(param)} 
+      ( param: any ) => { console.log(param) } 
     )
-  }
-
-  public editar(values:any){
-    this.ofertaService.updateOferta(values)
   }
 
   public excluir(id:number){

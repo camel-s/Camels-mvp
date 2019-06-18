@@ -5,5 +5,6 @@ export class Oferta{
     public titulo: string
     public descricao: string
     public servicos: Servico[]
+    public data: Date
     public usuario: Usuario
 }

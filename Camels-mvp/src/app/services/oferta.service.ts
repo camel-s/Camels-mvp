@@ -50,11 +50,13 @@ export class OfertaService {
 
   public addOferta(values: any){
     console.log(values)
+    let data = new Date()
     let oferta = {
       id: null,
       titulo: values.titulo,
       descricao: values.descricao,
       servicos: [ values.servico ],
+      data: data.toISOString(),
       usuario: 1 
     }
 

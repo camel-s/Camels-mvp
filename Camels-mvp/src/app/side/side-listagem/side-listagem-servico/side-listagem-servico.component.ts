@@ -22,9 +22,6 @@ export class SideListagemServicoComponent implements OnInit {
     })
   }
 
-  public editar(values: any) {
-  }
-
   public excluir(id:number) {
     for (let index = 0; index < this.servicos.length; index++) {
       if (this.servicos[index].id == id) {
