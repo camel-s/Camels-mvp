@@ -34,6 +34,7 @@ import { RoutesService } from './services/routes.service';
 import { SideEditarComponent } from './side/side-editar/side-editar.component';
 import { SideEditarOfertaComponent } from './side/side-editar/side-editar-oferta/side-editar-oferta.component';
 import { SideEditarServicoComponent } from './side/side-editar/side-editar-servico/side-editar-servico.component';
+import { InfoComponent } from './side/info/info.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { SideEditarServicoComponent } from './side/side-editar/side-editar-servi
     SideServicoComponent,
     SideEditarComponent,
     SideEditarOfertaComponent,
-    SideEditarServicoComponent
+    SideEditarServicoComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

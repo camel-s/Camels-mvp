@@ -15,6 +15,7 @@ import { resolve } from 'q';
 export class SideListagemOfertaComponent implements OnInit {
   
   public ofertas: Oferta[]
+  public usuario: boolean = false
 
   constructor(private ofertaService: OfertaService, private servicoService: ServicoService) { }
 

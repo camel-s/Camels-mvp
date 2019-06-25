@@ -1,9 +1,14 @@
 .oferta-contratante{
    border: none;  
-   border-radius: 50%;
+   border-radius: 35px;
 }
 
 .oferta-oferente{
     border: none;
     border-radius: 10px;
+}
+
+.foto-oferta{
+    height: 6.5vh;
+    width: 6.5vh;
 }

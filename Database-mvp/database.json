@@ -8,33 +8,35 @@
       "cpf": 11011011011
     }
   ],
-  "ofertas": [],
+  "ofertas": [
+    {
+      "id": 1,
+      "titulo": "Pedreiro top",
+      "descricao": "asda",
+      "servicos": [
+        "1"
+      ],
+      "data": "2019-06-24T19:33:12.131Z",
+      "usuario": 1
+    }
+  ],
   "servicos": [
     {
       "id": 1,
-      "titulo": "Arquiteto",
+      "titulo": "Pedreiro",
       "descricao": "Fazer umas laje",
       "tipo": "1",
-      "preco": 20,
-      "data": 1560882323928,
+      "preco": 12,
+      "data": "2019-06-24T19:05:25.879Z",
       "usuario": 1
     },
     {
       "id": 2,
-      "titulo": "",
-      "descricao": "",
-      "tipo": "",
-      "preco": "",
-      "data": 1560882501696,
-      "usuario": 1
-    },
-    {
-      "id": 3,
-      "titulo": "",
-      "descricao": "",
-      "tipo": "",
-      "preco": "",
-      "data": 1560883027637,
+      "titulo": "Arquiteto",
+      "descricao": "Fazer uns prédio",
+      "tipo": "1",
+      "preco": 15,
+      "data": "2019-06-24T19:27:22.600Z",
       "usuario": 1
     }
   ]

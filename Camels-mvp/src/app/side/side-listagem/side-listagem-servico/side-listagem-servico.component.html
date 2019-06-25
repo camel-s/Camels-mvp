@@ -1,14 +1,19 @@
 <div *ngFor='let servico of servicos' class="col-12 p-0" [routerLink]="['/side/editar/servico/',servico.id]">
   <div class='row mt-3 mx-auto p-0'>
-    <div class="servico col-9 vh10 bg-1 c-2 p-2 ml-3">
-      <div class='col-12 m-1'>
+    <div class="servico col-9 vh10 bg-3 c-1 p-2 ml-3">
+      <div class='col-12 ml-1'>
         <div class="row f-es-m fs-m1">
           {{ servico.titulo }}
         </div>
       </div>
-      <div class='col-12 m-1'>
-        <div class="row f-es-m fs-m1">
-          {{ servico.data }}
+      <div class='col-12 ml-1 '>
+        <div class="row p-0">
+          <div class="col-8 p-0 f-es-r fs-s2">
+            {{ servico.data | date:'dd/MM/yy' | uppercase }}
+          </div>
+          <div class="col-4 p-0 f-es-m fs-s3">
+            {{ servico.preco | currency:'BRL' }}
+          </div>
         </div>
       </div>
     </div>
