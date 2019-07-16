@@ -1,3 +1,32 @@
-<p>
-  side-oferta works!
-</p>
+<div class="col-12">
+  <div class="row mt15">
+    <div class="mx-auto foto-oferta br-50 bg-3"></div>
+  </div>
+  <div class="row mt-4">
+    <div class="mx-auto fs-t3 f-es-m">
+      {{ oferta.titulo }}
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="mx-auto fs-m2 f-es-r">
+      {{ usuario.nome }}
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="mx-auto text-center col-8 fs-m1 f-es-r">
+      {{ oferta.descricao }}
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class='col-9 mx-auto'>
+      <div class='row p-0'>
+        <div class='col-7'>avaliação</div>
+        <div class='col-5 fs-b2 text-right f-es-m'>{{ servicos[0].preco | currency:'BRL':'symbol':'2.0-2'}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <button class="bt-default bg-3 fs-m2 f-es-m c-2 mx-auto">Contratar</button>
+  </div>
+
+</div>

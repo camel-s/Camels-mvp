@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessaoService } from 'src/app/services/sessao.service';
 
 @Component({
   selector: 'app-content-contratante',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentContratanteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sessaoService: SessaoService) { }
 
   ngOnInit() {
+    this.sessaoService.setAtuacao(true)
   }
 
 }

@@ -12,7 +12,9 @@ export class SideEditarServicoComponent implements OnInit {
 
   public servico: Servico
 
-  constructor(private route: ActivatedRoute, private servicoService: ServicoService, private router: Router) {
+  constructor(private route: ActivatedRoute, 
+              private servicoService: ServicoService, 
+              private router: Router) {
     this.servico = {
       id: null,
       titulo: '',

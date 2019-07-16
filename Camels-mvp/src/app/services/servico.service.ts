@@ -25,7 +25,7 @@ export class ServicoService {
     if(id){
       search = '?id='+id;
     }
-    return this.http.get(URL_API + '/servicos'+search)
+    return this.http.get(this.url+search)
       .toPromise()
       .then((resposta: Servico[]) => resposta)
   }

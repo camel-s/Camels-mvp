@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessaoService } from '../services/sessao.service';
 
 @Component({
   selector: 'app-content',
@@ -7,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  public usuario: boolean
-
-  constructor() {
-    this.usuario = true;
-   }
+  constructor(private sessaoService: SessaoService) {}
 
   ngOnInit() {
   }

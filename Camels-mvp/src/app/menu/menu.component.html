@@ -1,8 +1,8 @@
 <div class="menu fixed-top bg-null">
-  <div *ngIf='usuario'>
+  <div *ngIf='sessaoService.getSessao()'>
     <app-menu-main></app-menu-main>
   </div>
-  <div *ngIf='!usuario'>
+  <div *ngIf='!sessaoService.getSessao()'>
     <app-menu-inicial></app-menu-inicial>
   </div>
 </div>

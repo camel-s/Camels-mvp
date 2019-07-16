@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Servico } from 'src/app/models/servico.model';
 import { ServicoService } from 'src/app/services/servico.service';
 import { resolve } from 'q';
-
+import { PesquisaService } from 'src/app/services/pesquisa.service';
 @Component({
   selector: 'app-side-listagem-servico',
   templateUrl: './side-listagem-servico.component.html',
@@ -12,14 +12,23 @@ import { resolve } from 'q';
 export class SideListagemServicoComponent implements OnInit {
 
   public servicos: Servico[]
+  public listagemServicos: any[]
 
-  constructor(private servicoService: ServicoService) { }
+  constructor(private servicoService: ServicoService, private pesquisaService: PesquisaService) {}
 
   ngOnInit() {
     this.servicoService.getServicos()
     .then(( servicos: Servico[]) => {
-      resolve( this.servicos = servicos)
-    })
+      resolve( 
+        this.servicos = servicos
+      )
+    }).then(
+      () => {
+        this.listagemServicos = this.servicos
+      }
+    )
+
+    this.pesquisaService.pesquisa(this)
   }
 
   public excluir(id:number) {
@@ -29,6 +38,10 @@ export class SideListagemServicoComponent implements OnInit {
       }
     }
     this.servicoService.deleteServico(id)
+  }
+
+  public pesquisa() {
+    this.listagemServicos= this.pesquisaService.filtro(this.servicos)
   }
 
 }

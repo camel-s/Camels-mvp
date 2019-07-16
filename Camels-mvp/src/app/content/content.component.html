@@ -1,9 +1,8 @@
-
 <div class="content">
-  <div *ngIf='usuario'>
+  <div *ngIf='sessaoService.getSessao()'>
     <router-outlet></router-outlet>
   </div>
-  <div *ngIf='!usuario'>
+  <div *ngIf='!sessaoService.getSessao()'>
     <app-content-inicial></app-content-inicial>
   </div>
 </div>

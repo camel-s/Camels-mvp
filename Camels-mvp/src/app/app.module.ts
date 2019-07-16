@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterLinkActive } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -30,11 +30,11 @@ import { OfertaService } from './services/oferta.service';
 import { ServicoService } from './services/servico.service';
 import { SideOfertaComponent } from './side/side-oferta/side-oferta.component';
 import { SideServicoComponent } from './side/side-servico/side-servico.component';
-import { RoutesService } from './services/routes.service';
 import { SideEditarComponent } from './side/side-editar/side-editar.component';
 import { SideEditarOfertaComponent } from './side/side-editar/side-editar-oferta/side-editar-oferta.component';
 import { SideEditarServicoComponent } from './side/side-editar/side-editar-servico/side-editar-servico.component';
-import { InfoComponent } from './side/info/info.component';
+import { SessaoDirective } from './directives/sessao.directive';
+import { PesquisaDirective } from './directives/pesquisa.directive';
 
 
 @NgModule({
@@ -64,7 +64,8 @@ import { InfoComponent } from './side/info/info.component';
     SideEditarComponent,
     SideEditarOfertaComponent,
     SideEditarServicoComponent,
-    InfoComponent
+    SessaoDirective,
+    PesquisaDirective
   ],
   imports: [
     BrowserModule,
@@ -74,9 +75,10 @@ import { InfoComponent } from './side/info/info.component';
   ],
   providers: [ 
     OfertaService, 
-    ServicoService,
-    RoutesService 
+    ServicoService 
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ 
+}

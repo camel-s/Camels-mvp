@@ -26,10 +26,12 @@ export class OfertaService {
 
   constructor(private http: HttpClient,private servicoService: ServicoService) {}
 
-  public getOfertas(id?:any){
+  public getOfertas(id?:any, titulo?:any){
     let search: string = '';
     if (id) {
       search = '?id=' + id;
+    }else if (titulo){
+      search = '?titulo_like="' + titulo + '"'
     }
     return this.http.get(this.url+search)
       .toPromise()

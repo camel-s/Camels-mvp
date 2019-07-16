@@ -15,7 +15,9 @@ export class SideCadastroOfertaComponent implements OnInit {
   public servicos: Servico[]
   private fonts: string
   
-  constructor(private servicoService: ServicoService, private ofertaService: OfertaService, private router: Router) { 
+  constructor(private servicoService: ServicoService, 
+              private ofertaService: OfertaService,
+              private router: Router) {
     this.fonts = Fonts.titleSizeAdjust($(window).width())
   }
 

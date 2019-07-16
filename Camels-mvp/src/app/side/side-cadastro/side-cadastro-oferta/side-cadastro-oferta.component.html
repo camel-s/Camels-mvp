@@ -8,11 +8,11 @@
         placeholder="Título">
     </div>
     <div class='row mt-2'>
-      <textarea ngModel #titulo='ngModel' name="descricao" cols="30" rows="10"
+      <textarea ngModel #descricao='ngModel' name="descricao" cols="30" rows="10"
         class="txta-default col-12 fs-m2 f-es-m form-control" placeholder="Descrição"></textarea>
     </div>
     <div class='row mt-2'>
-      <select ngModel #titulo='ngModel' name="servico" class="ipt-default col-12 fs-m2 f-es-m form-control">
+      <select ngModel #servico='ngModel' name="servico" class="ipt-default col-12 fs-m2 f-es-m form-control">
         <option default value="">Vincular Serviço</option>
         <option *ngFor='let servico of servicos' [value]="servico.id">{{ servico.titulo }}</option>
         <option>Adicionar</option>

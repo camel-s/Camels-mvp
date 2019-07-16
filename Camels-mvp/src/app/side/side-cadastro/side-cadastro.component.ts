@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RoutesService } from 'src/app/services/routes.service';
 
 @Component({
   selector: 'app-side-cadastro',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideCadastroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routes: RoutesService) { }
 
   ngOnInit() {
     

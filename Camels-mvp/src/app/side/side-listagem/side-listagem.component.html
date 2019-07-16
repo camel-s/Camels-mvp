@@ -1,16 +1,15 @@
 <div class="col-12 listagem">
-    <form class="row col-12 mx-auto mt10 p-0">
+    <div class="row col-12 mx-auto mt10 p-0">
         <div class="col-11">
-            <input type="search" name="pesquisa" class="col-12 ipt-default fs-m2 f-es-m form-group" placeholder="Pesquisa">
+            <input id='listagem-pesquisa' ngModel #pesquisa='ngModel' (keyup)='pesquisar(pesquisa)' type="search" name="pesquisa"
+                class="col-12 ipt-default fs-m2 f-es-m form-group" placeholder="Pesquisa">
         </div>
         <div class="col-1 m-0 p-0">
-            <button type='submit' class="bg-0 mx-auto">
                 <svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <image xlink:href="/assets/svg/loupe.svg" x="0" y="0" height="100" width="100" />
                 </svg>
-            </button>
         </div>
-    </form>
-    <router-outlet></router-outlet>
+    </div>
+    <router-outlet (activate)='routes.onActivate()'></router-outlet>
 </div>

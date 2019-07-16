@@ -11,12 +11,42 @@
   "ofertas": [
     {
       "id": 1,
-      "titulo": "Pedreiro top",
-      "descricao": "asda",
+      "titulo": "ABC",
+      "descricao": "asd",
+      "servicos": [
+        "2"
+      ],
+      "data": "2019-07-16T01:24:22.857Z",
+      "usuario": 1
+    },
+    {
+      "id": 2,
+      "titulo": "CDB",
+      "descricao": "asdasd",
       "servicos": [
         "1"
       ],
-      "data": "2019-06-24T19:33:12.131Z",
+      "data": "2019-07-16T01:24:39.894Z",
+      "usuario": 1
+    },
+    {
+      "id": 3,
+      "titulo": "EFGASFASD",
+      "descricao": "asd",
+      "servicos": [
+        "3"
+      ],
+      "data": "2019-07-16T01:24:51.800Z",
+      "usuario": 1
+    },
+    {
+      "id": 4,
+      "titulo": "ADER",
+      "descricao": "asdas",
+      "servicos": [
+        "1"
+      ],
+      "data": "2019-07-16T03:27:03.381Z",
       "usuario": 1
     }
   ],
@@ -32,11 +62,29 @@
     },
     {
       "id": 2,
-      "titulo": "Arquiteto",
-      "descricao": "Fazer uns prédio",
+      "titulo": "123",
+      "descricao": "123",
       "tipo": "1",
-      "preco": 15,
-      "data": "2019-06-24T19:27:22.600Z",
+      "preco": 123,
+      "data": "2019-07-16T01:23:50.095Z",
+      "usuario": 1
+    },
+    {
+      "id": 3,
+      "titulo": "234",
+      "descricao": "234",
+      "tipo": "2",
+      "preco": 34,
+      "data": "2019-07-16T01:24:03.903Z",
+      "usuario": 1
+    },
+    {
+      "id": 4,
+      "titulo": "ADV",
+      "descricao": "asd",
+      "tipo": "1",
+      "preco": 13,
+      "data": "2019-07-16T03:42:27.440Z",
       "usuario": 1
     }
   ]

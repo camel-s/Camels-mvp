@@ -1,14 +1,14 @@
-<div routerLinkActive='active' class='side col-12 vh100 position-fixed p-0 m-0'>
+<div [class]="classes">
     <div class='row col-12 p-0 p-0 m-0' *ngIf='display > 850'>
         <div class='col-6 vh100 bg-black-o p-3'></div>
         <div class='col-6 vh100 bg-white'>
             <div class='col-12 vh10 fixed-top d-flex flex-row-reverse pr-2'>
-                <a routerLink='/' class='l-1 p-1'>
-                    <svg width="15" height="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <image xlink:href="/assets/svg/delete.svg" x="0" y="0" height="100" width="100" />
-                    </svg>
-                </a>
+             <div (click)='close()' class='l-1 p-1'>
+                <svg width="15" height="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <image xlink:href="/assets/svg/delete.svg" x="0" y="0" height="100" width="100" />
+                </svg>
+              </div>
             </div>
             <router-outlet></router-outlet>
         </div>
@@ -16,14 +16,14 @@
     <div class='row col-12 p-0 m-0' *ngIf="display < 850">
         <div class='col-12 vh100 bg-white'>
             <div class='col-12 vh10 fixed-top d-flex flex-row-reverse pr-2'>
-                <a routerLink='/' class='l-1 p-1'>
-                <svg width="15" height="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <image xlink:href="/assets/svg/delete.svg" x="0" y="0" height="100" width="100" />
-                </svg>
-                </a>
+                <div (click)='close()' class='l-1 p-1'>
+                    <svg width="15" height="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <image xlink:href="/assets/svg/delete.svg" x="0" y="0" height="100" width="100" />
+                    </svg>
+                </div>
             </div>
-            <router-outlet></router-outlet>
+            <router-outlet (activate)="routes.onActivate()"></router-outlet>
         </div>
     </div>
 </div>
