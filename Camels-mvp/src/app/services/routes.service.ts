@@ -24,8 +24,6 @@ export class RoutesService {
     let url = this.router.url
 
     if(
-      url === '/side/cadastro/usuario' ||
-      url === '/side/login' ||
       url === '/side/listagem/servico' 
       ){
       this.link = '/content/oferente'
@@ -53,6 +51,12 @@ export class RoutesService {
       }else{
         this.link = '/content/oferente'
       }
+      this.root = 'content'
+    }else if(
+      url === '/side/cadastro/usuario' ||
+      url === '/side/login' 
+    ){
+      this.link = '/'
       this.root = 'content'
     }
   }

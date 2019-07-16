@@ -4,6 +4,7 @@ import { Oferta } from 'src/app/models/oferta.model';
 import { OfertaService } from 'src/app/services/oferta.service';
 import { Servico } from 'src/app/models/servico.model';
 import { ServicoService } from 'src/app/services/servico.service';
+import { SessaoService } from 'src/app/services/sessao.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class SideEditarOfertaComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
               private ofertaService: OfertaService, 
-              private servicoService: ServicoService, 
+              private servicoService: ServicoService,
+              private sessaoService: SessaoService, 
               private router: Router) {
     this.oferta = {
       id: null,
@@ -33,7 +35,7 @@ export class SideEditarOfertaComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params) => {
-        this.ofertaService.getOfertas(params.get('id'))
+        this.ofertaService.getOfertas(this.sessaoService.getUsuario().id,params.get('id'))
         .then(
           (resposta) => {
             this.oferta = resposta[0]

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SessaoService } from 'src/app/services/sessao.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-menu-main',

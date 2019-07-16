@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, RouterLinkActive } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -35,6 +35,7 @@ import { SideEditarOfertaComponent } from './side/side-editar/side-editar-oferta
 import { SideEditarServicoComponent } from './side/side-editar/side-editar-servico/side-editar-servico.component';
 import { SessaoDirective } from './directives/sessao.directive';
 import { PesquisaDirective } from './directives/pesquisa.directive';
+import { SessaoGuard } from './services/sessao-guard.service';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { PesquisaDirective } from './directives/pesquisa.directive';
   ],
   providers: [ 
     OfertaService, 
-    ServicoService 
+    ServicoService,
+    SessaoGuard 
   ],
   bootstrap: [AppComponent]
 })

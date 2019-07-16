@@ -29,13 +29,18 @@ export class SideListagemOfertaComponent implements OnInit {
               }
 
   ngOnInit() {
+    let usuario = false 
+    if(this.tipoUsuario)
+      usuario = this.sessaoService.getUsuario().id
+    
     this.tipoUsuario = this.sessaoService.getAtuacao()
-    this.ofertaService.getOfertas()
+    this.ofertaService.getOfertas(usuario)
     .then( 
-          ( ofertas ) => {  
+          ( ofertas ) => { 
+            console.log(ofertas) 
             this.ofertas = ofertas
             ofertas.forEach((el, index) => {
-              this.servicoService.getServicos(el.servicos[0]).then(
+              this.servicoService.getServicos(el.usuario,el.servicos[0]).then(
                 (servico) => { 
                    let oferta = this.ofertas[index-1]
                    oferta.servicos = servico 

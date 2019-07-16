@@ -3,6 +3,7 @@ import { Servico } from 'src/app/models/servico.model';
 import { ServicoService } from 'src/app/services/servico.service';
 import { resolve } from 'q';
 import { PesquisaService } from 'src/app/services/pesquisa.service';
+import { SessaoService } from 'src/app/services/sessao.service';
 @Component({
   selector: 'app-side-listagem-servico',
   templateUrl: './side-listagem-servico.component.html',
@@ -14,10 +15,10 @@ export class SideListagemServicoComponent implements OnInit {
   public servicos: Servico[]
   public listagemServicos: any[]
 
-  constructor(private servicoService: ServicoService, private pesquisaService: PesquisaService) {}
+  constructor(private servicoService: ServicoService, private sessaoService: SessaoService, private pesquisaService: PesquisaService) {}
 
   ngOnInit() {
-    this.servicoService.getServicos()
+    this.servicoService.getServicos(this.sessaoService.getUsuario().id)
     .then(( servicos: Servico[]) => {
       resolve( 
         this.servicos = servicos

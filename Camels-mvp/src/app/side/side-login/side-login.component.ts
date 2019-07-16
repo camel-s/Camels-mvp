@@ -28,7 +28,7 @@ export class SideLoginComponent implements OnInit {
           console.log(this.sessaoService.getSessao())
           this.router.navigate(['/'])
         }else{
-
+          alert(1)
         }
       }
     )

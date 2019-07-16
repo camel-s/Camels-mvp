@@ -10,16 +10,6 @@
   ],
   "ofertas": [
     {
-      "id": 1,
-      "titulo": "ABC",
-      "descricao": "asd",
-      "servicos": [
-        "2"
-      ],
-      "data": "2019-07-16T01:24:22.857Z",
-      "usuario": 1
-    },
-    {
       "id": 2,
       "titulo": "CDB",
       "descricao": "asdasd",
@@ -48,17 +38,25 @@
       ],
       "data": "2019-07-16T03:27:03.381Z",
       "usuario": 1
+    },
+    {
+      "id": 5,
+      "titulo": "ADS",
+      "descricao": "asdasd",
+      "servicos": [
+        "1"
+      ],
+      "data": "2019-07-16T23:19:34.957Z",
+      "usuario": 1
     }
   ],
   "servicos": [
     {
-      "id": 1,
-      "titulo": "Pedreiro",
-      "descricao": "Fazer umas laje",
+      "titulo": "",
+      "descricao": "",
       "tipo": "1",
-      "preco": 12,
-      "data": "2019-06-24T19:05:25.879Z",
-      "usuario": 1
+      "preco": "",
+      "id": 1
     },
     {
       "id": 2,

@@ -15,6 +15,8 @@ import { SideEditarComponent } from './side/side-editar/side-editar.component';
 import { SideEditarOfertaComponent } from './side/side-editar/side-editar-oferta/side-editar-oferta.component';
 import { SideEditarServicoComponent } from './side/side-editar/side-editar-servico/side-editar-servico.component';
 import { SideOfertaComponent } from './side/side-oferta/side-oferta.component';
+import { SessaoGuard } from './services/sessao-guard.service';
+import { ContentInicialComponent } from './content/content-inicial/content-inicial.component';
 
 export const ROUTES: Routes = [
     { path: 'side', component: SideComponent, 
@@ -22,16 +24,17 @@ export const ROUTES: Routes = [
             { path: 'cadastro', component: SideCadastroComponent, 
                 children: [
                 { path: 'usuario', component: SideCadastroUsuarioComponent},
-                { path: 'oferta', component: SideCadastroOfertaComponent},
-                { path: 'servico', component: SideCadastroServicoComponent}  
+                    { path: 'oferta', component: SideCadastroOfertaComponent, canActivate: [SessaoGuard]},
+                    { path: 'servico', component: SideCadastroServicoComponent, canActivate: [SessaoGuard]}  
             ]},
-            { path: 'listagem', component: SideListagemComponent,
+            {
+                path: 'listagem', component: SideListagemComponent, canActivate: [SessaoGuard],
                 children: [
                     { path: 'oferta', component: SideListagemOfertaComponent },
                     { path: 'servico', component: SideListagemServicoComponent }
             ]},
             {
-                path: 'editar', component: SideEditarComponent,
+                path: 'editar', component: SideEditarComponent, canActivate: [SessaoGuard],
                 children: [
                     { path: 'oferta', component: SideEditarOfertaComponent },
                     { path: 'oferta/:id', component: SideEditarOfertaComponent },
@@ -39,14 +42,19 @@ export const ROUTES: Routes = [
                     { path: 'servico/:id', component: SideEditarServicoComponent }
                 ]
             },
-            { path: 'oferta/:id', component: SideOfertaComponent },
+            { path: 'oferta/:id', component: SideOfertaComponent, canActivate: [SessaoGuard] }, 
             { path: 'login', component: SideLoginComponent }
         ]
     },
     { path: 'content', component: ContentComponent,
         children: [
             { path: 'contratante', component: ContentContratanteComponent},
-            { path: 'oferente', component: ContentOferenteComponent}
+            { path: 'oferente', component: ContentOferenteComponent},
+            { path: 'inicial', component: ContentInicialComponent }
         ]
+    },
+    {
+        path: '', component: ContentContratanteComponent, canActivate:[SessaoGuard] 
     }
+
 ]

@@ -20,10 +20,13 @@ export class ServicoService {
 
   constructor(private http: HttpClient) {}
 
-  public getServicos(id?: any): Promise<Servico[]> {
+  public getServicos(usuario?:any, id?: any): Promise<Servico[]> {
     let search:string = '';
+    if(usuario){
+      search = '?usuario='+usuario
+    }
     if(id){
-      search = '?id='+id;
+      search += '?id='+id;
     }
     return this.http.get(this.url+search)
       .toPromise()
