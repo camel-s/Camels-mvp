@@ -15,12 +15,24 @@
     </div>
     <div class='row col-12 p-0 m-0' *ngIf="display < 850">
         <div class='col-12 vh100 bg-white'>
-            <div class='col-12 vh10 fixed-top d-flex flex-row-reverse pr-2'>
-                <div (click)='close()' class='l-1 p-1'>
-                    <svg width="15" height="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <image xlink:href="/assets/svg/delete.svg" x="0" y="0" height="100" width="100" />
-                    </svg>
+            <div class="row fixed-top vh10">
+                <div class='col-6 d-flex flex-row'>
+                    <div *ngIf='sessaoService.getSessao()'>
+                        <div class='ml-2 mt-2 p-1'>
+                            <img src="./assets/img/icon-1x.png" width="30" height="30" class="d-inline-block align-top"
+                                routerLink='/side/perfil' alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class='col-6 d-flex flex-row-reverse'>
+                    <div *ngIf='contratacao == false'>
+                        <div (click)='close()' class='mr-2 mt-1 p-1'>
+                            <svg width="15" height="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <image xlink:href="/assets/svg/delete.svg" x="0" y="0" height="100" width="100" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
             <router-outlet (activate)="routes.onActivate()"></router-outlet>

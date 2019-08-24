@@ -12,7 +12,7 @@ export class SideListagemComponent implements OnInit {
   constructor(private routes: RoutesService,private pesquisaService: PesquisaService) { }
 
   ngOnInit() {
-    
+
   }
 
   pesquisar(input){

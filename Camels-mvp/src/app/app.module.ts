@@ -22,7 +22,6 @@ import { SideListagemComponent } from './side/side-listagem/side-listagem.compon
 import { SideAvaliacaoComponent } from './side/side-avaliacao/side-avaliacao.component';
 import { ContentContratanteComponent } from './content/content-contratante/content-contratante.component';
 import { ContentOferenteComponent } from './content/content-oferente/content-oferente.component';
-import { MenuPerfilComponent } from './menu/menu-perfil/menu-perfil.component';
 import { ContentInicialComponent } from './content/content-inicial/content-inicial.component';
 import { SideListagemOfertaComponent } from './side/side-listagem/side-listagem-oferta/side-listagem-oferta.component';
 import { SideListagemServicoComponent } from './side/side-listagem/side-listagem-servico/side-listagem-servico.component';
@@ -36,6 +35,8 @@ import { SideEditarServicoComponent } from './side/side-editar/side-editar-servi
 import { SessaoDirective } from './directives/sessao.directive';
 import { PesquisaDirective } from './directives/pesquisa.directive';
 import { SessaoGuard } from './services/sessao-guard.service';
+import { SidePerfilComponent } from './side/side-perfil/side-perfil.component';
+import { SideContratacaoComponent } from './side/side-contratacao/side-contratacao.component';
 
 
 @NgModule({
@@ -56,7 +57,6 @@ import { SessaoGuard } from './services/sessao-guard.service';
     SideAvaliacaoComponent,
     ContentContratanteComponent,
     ContentOferenteComponent,
-    MenuPerfilComponent,
     ContentInicialComponent,
     SideListagemOfertaComponent,
     SideListagemServicoComponent,
@@ -66,7 +66,9 @@ import { SessaoGuard } from './services/sessao-guard.service';
     SideEditarOfertaComponent,
     SideEditarServicoComponent,
     SessaoDirective,
-    PesquisaDirective
+    PesquisaDirective,
+    SidePerfilComponent,
+    SideContratacaoComponent
   ],
   imports: [
     BrowserModule,

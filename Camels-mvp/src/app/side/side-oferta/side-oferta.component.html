@@ -9,7 +9,7 @@
   </div>
   <div class="row mt-1">
     <div class="mx-auto fs-m2 f-es-r">
-      {{ usuario.nome }}
+      {{ oferta.usuario.nome }}
     </div>
   </div>
   <div class="row mt-4">
@@ -20,13 +20,12 @@
   <div class="row mt-4">
     <div class='col-9 mx-auto'>
       <div class='row p-0'>
-        <div class='col-7'>avaliação</div>
-        <div class='col-5 fs-b2 text-right f-es-m'>{{ servicos[0].preco | currency:'BRL':'symbol':'2.0-2'}}</div>
+        <div class='col-7'>{{ oferta.usuario.avaliacao }}</div>
+        <div class='col-5 fs-b2 text-right f-es-m'>{{ oferta.servico.preco | currency:'BRL':'symbol':'2.0-2'}}</div>
       </div>
     </div>
   </div>
   <div class="row mt-5">
-    <button class="bt-default bg-3 fs-m2 f-es-m c-2 mx-auto">Contratar</button>
+    <button class="bt-default bg-3 fs-m2 f-es-m c-2 mx-auto" (click)='contratar()'>Contratar</button>
   </div>
-
 </div>

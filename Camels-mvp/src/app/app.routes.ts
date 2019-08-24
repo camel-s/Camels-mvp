@@ -17,6 +17,9 @@ import { SideEditarServicoComponent } from './side/side-editar/side-editar-servi
 import { SideOfertaComponent } from './side/side-oferta/side-oferta.component';
 import { SessaoGuard } from './services/sessao-guard.service';
 import { ContentInicialComponent } from './content/content-inicial/content-inicial.component';
+import { MenuComponent } from './menu/menu.component';
+import { SidePerfilComponent } from './side/side-perfil/side-perfil.component';
+import { SideContratacaoComponent } from './side/side-contratacao/side-contratacao.component';
 
 export const ROUTES: Routes = [
     { path: 'side', component: SideComponent, 
@@ -42,19 +45,25 @@ export const ROUTES: Routes = [
                     { path: 'servico/:id', component: SideEditarServicoComponent }
                 ]
             },
-            { path: 'oferta/:id', component: SideOfertaComponent, canActivate: [SessaoGuard] }, 
-            { path: 'login', component: SideLoginComponent }
+            { path: 'oferta/:id', component: SideOfertaComponent, canActivate: [SessaoGuard] },
+            { path: 'login', component: SideLoginComponent },
+            { path: 'perfil', component: SidePerfilComponent, canActivate: [SessaoGuard] },
+            { path: 'contratacao', component: SideContratacaoComponent, canActivate: [SessaoGuard] }
         ]
     },
-    { path: 'content', component: ContentComponent,
+    {
+        path: 'content', component: ContentComponent,
         children: [
-            { path: 'contratante', component: ContentContratanteComponent},
-            { path: 'oferente', component: ContentOferenteComponent},
+            { path: 'contratante', component: ContentContratanteComponent, canActivate: [SessaoGuard]},
+            { path: 'oferente', component: ContentOferenteComponent, canActivate: [SessaoGuard]},
             { path: 'inicial', component: ContentInicialComponent }
         ]
     },
     {
-        path: '', component: ContentContratanteComponent, canActivate:[SessaoGuard] 
+        path: 'menu', component: MenuComponent
+    },
+    {
+        path: '', component: ContentContratanteComponent, canActivate:[SessaoGuard]
     }
 
 ]

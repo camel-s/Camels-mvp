@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Servico } from 'src/app/models/servico.model';
 import { ServicoService } from 'src/app/services/servico.service';
-import { resolve } from 'q';
 import { PesquisaService } from 'src/app/services/pesquisa.service';
 import { SessaoService } from 'src/app/services/sessao.service';
+import { ServicoDB } from 'src/app/models/servico_db.model';
 @Component({
   selector: 'app-side-listagem-servico',
   templateUrl: './side-listagem-servico.component.html',
@@ -12,23 +12,21 @@ import { SessaoService } from 'src/app/services/sessao.service';
 })
 export class SideListagemServicoComponent implements OnInit {
 
-  public servicos: Servico[]
-  public listagemServicos: any[]
+  public servicos: Servico[] = []
 
   constructor(private servicoService: ServicoService, private sessaoService: SessaoService, private pesquisaService: PesquisaService) {}
 
   ngOnInit() {
     this.servicoService.getServicos(this.sessaoService.getUsuario().id)
-    .then(( servicos: Servico[]) => {
-      resolve( 
-        this.servicos = servicos
-      )
-    }).then(
-      () => {
-        this.listagemServicos = this.servicos
-      }
-    )
-
+    .then(( servicos_db: ServicoDB[]) => {
+        servicos_db.forEach(element => {
+          this.servicoService.toServico(element).then(
+            (servico: Servico) =>{
+              this.servicos.push(servico)
+            }
+          )
+        })
+    })
     this.pesquisaService.pesquisa(this)
   }
 
@@ -42,7 +40,7 @@ export class SideListagemServicoComponent implements OnInit {
   }
 
   public pesquisa() {
-    this.listagemServicos= this.pesquisaService.filtro(this.servicos)
+    this.servicos= this.pesquisaService.filtro(this.servicos)
   }
 
 }

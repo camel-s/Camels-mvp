@@ -4,6 +4,7 @@ import 'rxjs'
 import { SessaoService } from '../services/sessao.service';
 import { RoutesService } from '../services/routes.service';
 import { ActivatedRoute } from '@angular/router';
+import { SideContratacaoComponent } from './side-contratacao/side-contratacao.component';
 
 @Component({
   selector: 'app-side',
@@ -13,15 +14,19 @@ import { ActivatedRoute } from '@angular/router';
 export class SideComponent implements OnInit {
 
   private display: number
-  private classes: string 
+  private classes: string
+  private contratacacao: boolean = false
 
-  constructor(private routes: RoutesService, private sessaoService: SessaoService, private activatedRoute: ActivatedRoute) { 
+  constructor(private routes: RoutesService, private sessaoService: SessaoService, private activatedRoute: ActivatedRoute) {
     this.display = $(window).width();
     this.baseClasses()
     if(this.activatedRoute.component === SideComponent){
       this.classes += ' active'
     }else{
       this.classes += ' unactive'
+    }
+    if(this.activatedRoute.children[0].component === SideContratacaoComponent){
+      this.contratacacao = true
     }
   }
 

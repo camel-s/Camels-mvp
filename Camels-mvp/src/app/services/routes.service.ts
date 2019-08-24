@@ -44,7 +44,8 @@ export class RoutesService {
       this.link = '/side/listagem/servico'
       this.root = 'side'
     }else if(
-      url === '/side/listagem/oferta'
+      url === '/side/listagem/oferta' ||
+      url === '/side/perfil'
     ){
       if(this.sessaoService.getAtuacao()){
         this.link = '/content/contratante'

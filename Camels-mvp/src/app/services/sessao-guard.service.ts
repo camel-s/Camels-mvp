@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { SessaoService } from './sessao.service';
-import { Router } from '@angular/router';
+import { Router, CanActivate } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'

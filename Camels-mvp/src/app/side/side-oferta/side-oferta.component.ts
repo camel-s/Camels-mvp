@@ -5,6 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OfertaService } from 'src/app/services/oferta.service';
 import { ServicoService } from 'src/app/services/servico.service';
 import { SessaoService } from 'src/app/services/sessao.service';
+import { OfertaDB } from 'src/app/models/oferta_db.model';
+import { Usuario } from 'src/app/models/usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { NotificacaoService } from 'src/app/services/notificacao.service';
+import { Notificacao } from 'src/app/models/notificacao.model';
 
 @Component({
   selector: 'app-side-oferta',
@@ -14,49 +19,37 @@ import { SessaoService } from 'src/app/services/sessao.service';
 export class SideOfertaComponent implements OnInit {
 
   public oferta: Oferta
-  public usuario
-  public servicos: Servico[]
 
   constructor(private route: ActivatedRoute,
-              private ofertaService: OfertaService, 
-              private servicoService: ServicoService,
-              private sessaoService: SessaoService, 
+              private ofertaService: OfertaService,
+              private sessaoService: SessaoService,
+              private notificacaoService: NotificacaoService,
               private router: Router) {
-    this.oferta = {
-      id: null,
-      titulo: '',
-      descricao: '',
-      servicos: null,
-      data: null,
-      usuario: null
+    this.oferta = new Oferta([], [new Servico([],[]), new Usuario([],[])])
     }
-    this.usuario = {
-      id: null,
-      nome: ''
-    }
-  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params) => {
-        this.ofertaService.getOfertas(params.get('id'))
+        this.ofertaService.getOfertas(undefined, params.get('id'))
           .then(
-            (resposta) => {
-              this.oferta = resposta[0]
-              this.servicoService.getServicos(this.oferta.servicos).then(
-                (resposta) => {
-                  this.servicos = resposta
-                  this.sessaoService.getUsuario().then(
-                    (resposta) => {
-                      this.usuario = resposta[0]
-                    }
-                  )
+            (oferta_db: OfertaDB[]) => {
+              this.ofertaService.toOferta(oferta_db[0]).then(
+                oferta => {
+                  this.oferta = oferta
                 }
               )
             }
           )
       }
     )
+  }
+
+  contratar(){
+    let notificacao = new Notificacao(
+      [undefined, 1, new Date(), this.sessaoService.getUsuario().id, this.oferta.usuario.id, this.oferta.id]
+    )
+    this.notificacaoService.addNotificacao(notificacao)
   }
 
 }

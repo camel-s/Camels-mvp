@@ -4,6 +4,8 @@ import { Servico } from 'src/app/models/servico.model';
 import { OfertaService } from 'src/app/services/oferta.service';
 import { Fonts } from 'src/assets/fonts/fonts';
 import { Router } from '@angular/router';
+import { SessaoService } from 'src/app/services/sessao.service';
+import { ServicoDB } from 'src/app/models/servico_db.model';
 
 @Component({
   selector: 'app-side-cadastro-oferta',
@@ -12,19 +14,19 @@ import { Router } from '@angular/router';
 })
 export class SideCadastroOfertaComponent implements OnInit {
 
-  public servicos: Servico[]
+  public servicos: ServicoDB[]
   private fonts: string
-  
-  constructor(private servicoService: ServicoService, 
+  constructor(private servicoService: ServicoService,
               private ofertaService: OfertaService,
+              private sessaoService: SessaoService,
               private router: Router) {
     this.fonts = Fonts.titleSizeAdjust($(window).width())
   }
 
   ngOnInit() {
-    this.servicoService.getServicos()
+    this.servicoService.getServicos(this.sessaoService.getUsuario().id)
       .then(
-        (servicos) => { this.servicos = servicos}
+        (servicos_db) => { this.servicos = servicos_db}
       )
       .catch(
         (error) => console.error(error)

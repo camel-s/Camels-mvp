@@ -4,6 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URL_API } from '../app.api';
 
 import 'rxjs'
+import { SessaoService } from './sessao.service';
+import { ServicoDB } from '../models/servico_db.model';
+import { UsuarioService } from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,19 +21,37 @@ export class ServicoService {
     })
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, 
+    private sessaoService: SessaoService,
+    private usuarioService: UsuarioService) {}
 
-  public getServicos(usuario?:any, id?: any): Promise<Servico[]> {
+  public getServicos(usuario?:any, id?: any): Promise<ServicoDB[]> {
     let search:string = '';
     if(usuario){
       search = '?usuario='+usuario
     }
     if(id){
-      search += '?id='+id;
+      if(usuario){
+        search += '&id=' + id;
+      }else{
+        search = '?id=' + id;
+      }
     }
     return this.http.get(this.url+search)
       .toPromise()
-      .then((resposta: Servico[]) => resposta)
+      .then((servico: ServicoDB[]) => servico)
+  }
+
+  public getServico(usuario: number, id: number): Promise<Servico>{
+    return this.getServicos(usuario, id).then(
+      (servicos_db: ServicoDB[]) => {
+        return this.toServico(servicos_db[0]).then(
+          (servico: Servico) => {
+            return servico
+          }
+        )
+      }
+    )
   }
 
   public updateServico(values, id){
@@ -44,22 +65,29 @@ export class ServicoService {
   }
 
   public addServico(values) {
-    let servico = {
-      id: null,
-      titulo: values.titulo,
-      descricao: values.descricao,
-      tipo: values.tipo,
-      preco: values.preco,
-      data: new Date(),
-      usuario: 1
-    }
-    
+    let servico = new ServicoDB(
+      [values.titulo, values.descricao, values.tipo, values.preco, new Date(), this.sessaoService.getUsuario().id],
+    )
 
     return this.http.post(this.url + '/', JSON.stringify(servico), this.httpOptions)
       .toPromise()
       .then(
         (resposta: any) => { true }
       )
+  }
+
+  public toServico(servico_db: ServicoDB): Promise<Servico> {
+    return this.usuarioService.getUsuario(servico_db.usuario).then(
+      usuario => {
+        return new Servico([
+          servico_db.titulo,
+          servico_db.descricao,
+          servico_db.tipo,
+          servico_db.preco,
+          servico_db.data
+        ],[usuario])
+      }
+    )
   }
 
 }

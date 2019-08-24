@@ -3,6 +3,8 @@ import { Usuario } from '../models/usuario.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URL_API } from '../app.api';
 import { Login } from '../models/login.model';
+import { UsuarioDB } from '../models/usuario_db.model';
+import { AvaliacaoService } from './avaliacao.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,16 +19,19 @@ export class UsuarioService {
 
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private avaliacaoService: AvaliacaoService) { }
 
-  public getUsuario(id?: any): Promise<Usuario[]> {
+  public getUsuario(id?: number): Promise<Usuario> {
     let search: string = '';
     if (id) {
       search = '?id=' + id;
     }
     return this.http.get(this.url + search)
       .toPromise()
-      .then((resposta: Usuario[]) => resposta)
+      .then((usuario_db: UsuarioDB) => {
+            return this.toUsuario(usuario_db[0])
+          }
+        )
   }
 
   public updateUsuario(values, id) {
@@ -36,15 +41,10 @@ export class UsuarioService {
   }
 
   public addUsuario(values) {
-    let usuario = {
-      id: null,
-      nome: values.nome,
-      cpf: values.cpfs,
-      email: values.email,
-      senha: values.senha,
-      avaliacoes: null
-    }
-
+    let usuario = new Usuario(
+      [values.nome, values.cpf],
+      [new Login([values.email, values.senha]), null]
+    )
     return this.http.post(this.url + '/', JSON.stringify(usuario), this.httpOptions)
       .toPromise()
       .then(
@@ -64,6 +64,15 @@ export class UsuarioService {
          return false
         }
       }
+    )
+  }
+
+  public toUsuario(usuario_db): Usuario {
+    let avaliacao = this.avaliacaoService.getAvaliacao()
+    return new Usuario(
+      [usuario_db.nome, usuario_db.cpf],
+      [usuario_db.login, avaliacao],
+      usuario_db.id
     )
   }
 }

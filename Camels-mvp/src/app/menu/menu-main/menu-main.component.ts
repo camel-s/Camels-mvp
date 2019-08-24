@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessaoService } from 'src/app/services/sessao.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-main',
@@ -8,10 +9,10 @@ import { SessaoService } from 'src/app/services/sessao.service';
 })
 export class MenuMainComponent implements OnInit {
 
-  private tipoUsuario: string = 'contratante'  
+  private tipoUsuario: string = 'contratante'
   private link: string = '/content/oferente'
 
-  constructor(private sessaoService: SessaoService) {
+  constructor(private sessaoService: SessaoService, private router: Router) {
     if (window.location.pathname === '/content/oferente') {
       this.sessaoService.setAtuacao(false)
     } else if (window.location.pathname === '/content/contratante') {
@@ -21,6 +22,17 @@ export class MenuMainComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.sessaoService.notificacoes().then(
+      (notificacoes: any[]) => {
+        if(notificacoes){
+          notificacoes.forEach(element => {
+            if(element.tipo == 1){
+              this.router.navigate(['/side/contratacao'])
+            }
+          });
+        }
+      }
+    )
   }
 
   public alternarTipo(){

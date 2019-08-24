@@ -6,84 +6,122 @@
       "email": "arthur@gmail",
       "senha": "123",
       "cpf": 11011011011
+    },
+    {
+      "id": 2,
+      "nome": "ab",
+      "cpf": 123,
+      "email": "ab",
+      "senha": "123",
+      "avaliacoes": null
+    },
+    {
+      "id": 3,
+      "nome": "dc",
+      "cpf": 234,
+      "email": "dc",
+      "senha": "123",
+      "avaliacoes": null
     }
   ],
   "ofertas": [
     {
-      "id": 2,
-      "titulo": "CDB",
-      "descricao": "asdasd",
-      "servicos": [
-        "1"
-      ],
-      "data": "2019-07-16T01:24:39.894Z",
-      "usuario": 1
+      "titulo": "dsa",
+      "descricao": "dsa",
+      "data": "2019-08-12T19:08:42.636Z",
+      "servico": "7",
+      "usuario": 1,
+      "id": 14
     },
     {
-      "id": 3,
-      "titulo": "EFGASFASD",
-      "descricao": "asd",
-      "servicos": [
-        "3"
-      ],
-      "data": "2019-07-16T01:24:51.800Z",
-      "usuario": 1
+      "titulo": "ss",
+      "descricao": "ss",
+      "data": "2019-08-12T19:29:04.847Z",
+      "servico": "8",
+      "usuario": 3,
+      "id": 15
     },
     {
-      "id": 4,
-      "titulo": "ADER",
-      "descricao": "asdas",
-      "servicos": [
-        "1"
-      ],
-      "data": "2019-07-16T03:27:03.381Z",
-      "usuario": 1
+      "titulo": "pededuau",
+      "descricao": "ashduahsduashduhad",
+      "data": "2019-08-22T22:19:51.542Z",
+      "servico": "9",
+      "usuario": 1,
+      "id": 16
     },
     {
-      "id": 5,
-      "titulo": "ADS",
-      "descricao": "asdasd",
-      "servicos": [
-        "1"
-      ],
-      "data": "2019-07-16T23:19:34.957Z",
-      "usuario": 1
+      "titulo": "assassino de aluguel",
+      "descricao": "matar uma galera boa por um preço top",
+      "data": "2019-08-23T23:34:32.304Z",
+      "servico": "10",
+      "usuario": 3,
+      "id": 17
     }
   ],
   "servicos": [
     {
-      "titulo": "",
-      "descricao": "",
+      "titulo": "deu boa servico",
+      "descricao": "dbs",
       "tipo": "1",
-      "preco": "",
+      "preco": 34,
+      "data": "2019-08-04T16:47:31.133Z",
+      "usuario": 2,
+      "id": 6
+    },
+    {
+      "titulo": "asd",
+      "descricao": "asd",
+      "tipo": "1",
+      "preco": 123,
+      "data": "2019-08-12T19:08:27.323Z",
+      "usuario": 1,
+      "id": 7
+    },
+    {
+      "titulo": "ss",
+      "descricao": "ss",
+      "tipo": "1",
+      "preco": 10,
+      "data": "2019-08-12T19:28:50.371Z",
+      "usuario": 3,
+      "id": 8
+    },
+    {
+      "titulo": "bdbdbs",
+      "descricao": "asdahsduhasduhashd",
+      "tipo": "1",
+      "preco": 43,
+      "data": "2019-08-22T22:19:31.802Z",
+      "usuario": 1,
+      "id": 9
+    },
+    {
+      "titulo": "assassinato",
+      "descricao": "matar a galera por um preço razoável",
+      "tipo": "1",
+      "preco": 12,
+      "data": "2019-08-23T23:34:05.911Z",
+      "usuario": 3,
+      "id": 10
+    }
+  ],
+  "notificacoes": [
+    {
+      "tipo": 1,
+      "data": "2019-08-22T22:40:33.311Z",
+      "remetente": 3,
+      "destinatario": 1,
+      "oferta": 14,
       "id": 1
     },
     {
-      "id": 2,
-      "titulo": "123",
-      "descricao": "123",
-      "tipo": "1",
-      "preco": 123,
-      "data": "2019-07-16T01:23:50.095Z",
-      "usuario": 1
-    },
-    {
-      "id": 3,
-      "titulo": "234",
-      "descricao": "234",
-      "tipo": "2",
-      "preco": 34,
-      "data": "2019-07-16T01:24:03.903Z",
-      "usuario": 1
-    },
-    {
-      "id": 4,
-      "titulo": "ADV",
-      "descricao": "asd",
-      "tipo": "1",
-      "preco": 13,
-      "data": "2019-07-16T03:42:27.440Z",
-      "usuario": 1
+      "tipo": 1,
+      "data": "2019-08-23T03:11:11.261Z",
+      "remetente": 3,
+      "destinatario": 1,
+      "oferta": 16,
+      "id": 2
     }
-  ]
+  ],
+  "contratacoes": []
 }

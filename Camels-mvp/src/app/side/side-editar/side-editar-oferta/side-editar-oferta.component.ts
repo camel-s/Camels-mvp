@@ -5,6 +5,7 @@ import { OfertaService } from 'src/app/services/oferta.service';
 import { Servico } from 'src/app/models/servico.model';
 import { ServicoService } from 'src/app/services/servico.service';
 import { SessaoService } from 'src/app/services/sessao.service';
+import { OfertaDB } from 'src/app/models/oferta_db.model';
 
 
 @Component({
@@ -17,32 +18,29 @@ export class SideEditarOfertaComponent implements OnInit {
   public oferta: Oferta
   public servicos: Servico[]
 
-  constructor(private route: ActivatedRoute, 
-              private ofertaService: OfertaService, 
+  constructor(private route: ActivatedRoute,
+              private ofertaService: OfertaService,
               private servicoService: ServicoService,
-              private sessaoService: SessaoService, 
+              private sessaoService: SessaoService,
               private router: Router) {
-    this.oferta = {
-      id: null,
-      titulo: '',
-      descricao: '',
-      servicos: null,
-      data: null,
-      usuario: null
-    }
+      this.oferta = new Oferta([undefined,undefined,undefined],[undefined,undefined])
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params) => {
-        this.ofertaService.getOfertas(this.sessaoService.getUsuario().id,params.get('id'))
+        this.ofertaService.getOfertas(undefined,params.get('id'))
         .then(
-          (resposta) => {
-            this.oferta = resposta[0]
-            this.servicoService.getServicos().then(
-              (resposta) =>{
-                this.servicos = resposta
-              }
+          (ofertadb: OfertaDB[]) => {
+              this.ofertaService.toOferta(ofertadb[0]).then(
+                oferta => {
+                  this.oferta = oferta
+                  this.servicoService.getServicos().then(
+                    servico => {
+
+                    }
+                  )
+                }
               )
           }
         )
